@@ -3,11 +3,6 @@ import * as THREE from "three";
 
 import { OrbitControls } from "../utils/OrbitControls";
 
-import CarouselCLUNITED from "./CarouselCLUNITED";
-import CarouselGoobers from "./CarouselGoobers";
-import CarouselSandbox from "./CarouselSandbox";
-import CarouselXena from "./CarouselXena";
-import CarouselNFTMiami from "./CarouselNFTMiami";
 import GoobersGLTF from "../utils/GoobersGLTF";
 
 import CarouselElement from "../components/CarouselElement"
@@ -149,14 +144,14 @@ function Carousel() {
         className="carousel-description"
       >
         {rotate >= rotation.goobers.start && rotate < rotation.goobers.end
-          ? <CarouselElement title={goobersEcosistem.title} description={goobersEcosistem.description} ref={goobersRef}/>
+          ? <CarouselElement title={goobersEcosistem.title} description={goobersEcosistem.description} reference={goobersRef}/>
           : rotate >= rotation.sandbox.start && rotate < rotation.sandbox.end
-          ? <CarouselElement title={sandboxEcosistem.title} description={sandboxEcosistem.description} ref={sandboxRef}/>
+          ? <CarouselElement title={sandboxEcosistem.title} description={sandboxEcosistem.description} reference={sandboxRef}/>
           : rotate >= rotation.xena.start || rotate < rotation.xena.end
-          ? <CarouselElement title={xenaEcosistem.title} description={xenaEcosistem.description} ref={xenaRef}/>
+          ? <CarouselElement title={xenaEcosistem.title} description={xenaEcosistem.description} reference={xenaRef}/>
           : rotate >= rotation.clunited.start && rotate < rotation.clunited.end
-          ? <CarouselElement title={clunitedEcosistem.title} description={clunitedEcosistem.description} ref={clunitedRef}/>
-          : <CarouselElement title={nftmiamiEcosistem.title} description={nftmiamiEcosistem.description} ref={nftmiamiRef}/>
+          ? <CarouselElement title={clunitedEcosistem.title} description={clunitedEcosistem.description} reference={clunitedRef}/>
+          : <CarouselElement title={nftmiamiEcosistem.title} description={nftmiamiEcosistem.description} reference={nftmiamiRef}/>
         }
         
       </div>
