@@ -15,7 +15,7 @@ function GoobersGLTF(scene) {
     for (let i = 0; i < count; i++) {
       loader.load(
         // resource URL
-        '/assets/goobers/goobers2.gltf',
+        '/assets/goobers/goobers.gltf',
         // called when the resource is loaded
         function (gltf) {
           const mesh = gltf.scene;

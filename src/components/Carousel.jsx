@@ -3,17 +3,45 @@ import * as THREE from "three";
 
 import { OrbitControls } from "../utils/OrbitControls";
 
-import CarouselCLUNITED from "./CarouselCLUNITED";
-import CarouselGoobers from "./CarouselGoobers";
-import CarouselSandbox from "./CarouselSandbox";
-import CarouselXena from "./CarouselXena";
-import CarouselNFTMiami from "./CarouselNFTMiami";
 import GoobersGLTF from "../utils/GoobersGLTF";
+
+import CarouselElement from "../components/CarouselElement"
 
 function Carousel() {
   const carousel = useRef(null);
   const [rotate, setRotate] = useState();
   const { goobersGLTF } = GoobersGLTF()
+  
+  const goobersRef = useRef(null)
+  const sandboxRef = useRef(null)
+  const xenaRef = useRef(null)
+  const clunitedRef = useRef(null)
+  const nftmiamiRef = useRef(null)
+
+  const goobersEcosistem = {
+    title: "Goobers",
+    description: "Goobers NFT are 15,000 uniquely generated arts"
+  }
+
+  const sandboxEcosistem = {
+    title: "Sandbox",
+    description: "Sandbox is a game developed in a metaverse"
+  }
+
+  const xenaEcosistem = {
+    title: "Xena",
+    description: "Xena is a custom game on Rust"
+  }
+
+  const clunitedEcosistem = {
+    title: "CLUNITED",
+    description: "CLUNITED is a non-profit 501(c) organization"
+  }
+
+  const nftmiamiEcosistem = {
+    title: "NFTMiami",
+    description: "NFTMiami is a meetup for NFT community"
+  }
   
   const [rotation] = useState({
     goobers: {
@@ -92,43 +120,7 @@ function Carousel() {
       }
 
       const rot = controls.getAzimuthalAngle();
-      let rotMul = 0;
       setRotate(rot);
-
-      function transform(rotMul) {
-        return document.querySelector(`.carousel-description > div:nth-child(1)`).style.transform = `translateX(${rotMul}px)`;
-      }
-
-      // if(rot >= rotation.goobers.start && rot < 0) {
-      //   rotMul = ((rot-rotation.goobers.start)-rotation.goobers.difference) * 550;
-      //   transform(rotMul);
-      // } else if(rot < rotation.goobers.end && rot > 0) {
-      //   rotMul = ((rot-rotation.goobers.end)+rotation.goobers.difference) * 550;
-      //   transform(rotMul);
-      // }
-
-      // else if(rot >= rotation.sandbox.start && rot < rotation.sandbox.end) {
-      //   rotMul = ((rot-rotation.sandbox.start)-rotation.sandbox.difference) * 550;
-      //   transform(rotMul);
-      // }
-      
-      // else if(rot >= rotation.xena.start && rot > 0) {
-      //   rotMul = ((rot-rotation.xena.start)-rotation.xena.difference) * 550;
-      //   transform(rotMul);
-      // } else if(rot < rotation.xena.end && rot < 0) {
-      //   rotMul = ((rot-rotation.xena.end)+rotation.xena.difference) * 550;
-      //   transform(rotMul);
-      // }
-
-      // if(rot >= rotation.clunited.start && rot < rotation.clunited.end) {
-      //   rotMul = ((rot-rotation.clunited.start)-rotation.clunited.difference) * 550;
-      //   transform(rotMul);
-      // }
-
-      // if(rot >= rotation.nftmiami.start && rot < rotation.nftmiami.end) {
-      //   rotMul = ((rot-rotation.nftmiami.start)-rotation.nftmiami.difference) * 550;
-      //   transform(rotMul);
-      // }
 
       controls.update();
       renderer.render(scene, camera);
@@ -152,14 +144,14 @@ function Carousel() {
         className="carousel-description"
       >
         {rotate >= rotation.goobers.start && rotate < rotation.goobers.end
-          ? <CarouselGoobers />
+          ? <CarouselElement title={goobersEcosistem.title} description={goobersEcosistem.description} reference={goobersRef}/>
           : rotate >= rotation.sandbox.start && rotate < rotation.sandbox.end
-          ? <CarouselSandbox />
+          ? <CarouselElement title={sandboxEcosistem.title} description={sandboxEcosistem.description} reference={sandboxRef}/>
           : rotate >= rotation.xena.start || rotate < rotation.xena.end
-          ? <CarouselXena />
+          ? <CarouselElement title={xenaEcosistem.title} description={xenaEcosistem.description} reference={xenaRef}/>
           : rotate >= rotation.clunited.start && rotate < rotation.clunited.end
-          ? <CarouselCLUNITED />
-          : <CarouselNFTMiami />
+          ? <CarouselElement title={clunitedEcosistem.title} description={clunitedEcosistem.description} reference={clunitedRef}/>
+          : <CarouselElement title={nftmiamiEcosistem.title} description={nftmiamiEcosistem.description} reference={nftmiamiRef}/>
         }
         
       </div>
