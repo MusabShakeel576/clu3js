@@ -80,7 +80,7 @@ function Carousel() {
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.2;
+    controls.autoRotateSpeed = 2.2;
     controls.enableZoom = false;
 
     function animate() {
@@ -99,36 +99,36 @@ function Carousel() {
         return document.querySelector(`.carousel-description > div:nth-child(1)`).style.transform = `translateX(${rotMul}px)`;
       }
 
-      if(rot >= rotation.goobers.start && rot < 0) {
-        rotMul = ((rot-rotation.goobers.start)-rotation.goobers.difference) * 550;
-        transform(rotMul);
-      } else if(rot < rotation.goobers.end && rot > 0) {
-        rotMul = ((rot-rotation.goobers.end)+rotation.goobers.difference) * 550;
-        transform(rotMul);
-      }
+      // if(rot >= rotation.goobers.start && rot < 0) {
+      //   rotMul = ((rot-rotation.goobers.start)-rotation.goobers.difference) * 550;
+      //   transform(rotMul);
+      // } else if(rot < rotation.goobers.end && rot > 0) {
+      //   rotMul = ((rot-rotation.goobers.end)+rotation.goobers.difference) * 550;
+      //   transform(rotMul);
+      // }
 
-      else if(rot >= rotation.sandbox.start && rot < rotation.sandbox.end) {
-        rotMul = ((rot-rotation.sandbox.start)-rotation.sandbox.difference) * 550;
-        transform(rotMul);
-      }
+      // else if(rot >= rotation.sandbox.start && rot < rotation.sandbox.end) {
+      //   rotMul = ((rot-rotation.sandbox.start)-rotation.sandbox.difference) * 550;
+      //   transform(rotMul);
+      // }
       
-      else if(rot >= rotation.xena.start && rot > 0) {
-        rotMul = ((rot-rotation.xena.start)-rotation.xena.difference) * 550;
-        transform(rotMul);
-      } else if(rot < rotation.xena.end && rot < 0) {
-        rotMul = ((rot-rotation.xena.end)+rotation.xena.difference) * 550;
-        transform(rotMul);
-      }
+      // else if(rot >= rotation.xena.start && rot > 0) {
+      //   rotMul = ((rot-rotation.xena.start)-rotation.xena.difference) * 550;
+      //   transform(rotMul);
+      // } else if(rot < rotation.xena.end && rot < 0) {
+      //   rotMul = ((rot-rotation.xena.end)+rotation.xena.difference) * 550;
+      //   transform(rotMul);
+      // }
 
-      if(rot >= rotation.clunited.start && rot < rotation.clunited.end) {
-        rotMul = ((rot-rotation.clunited.start)-rotation.clunited.difference) * 550;
-        transform(rotMul);
-      }
+      // if(rot >= rotation.clunited.start && rot < rotation.clunited.end) {
+      //   rotMul = ((rot-rotation.clunited.start)-rotation.clunited.difference) * 550;
+      //   transform(rotMul);
+      // }
 
-      if(rot >= rotation.nftmiami.start && rot < rotation.nftmiami.end) {
-        rotMul = ((rot-rotation.nftmiami.start)-rotation.nftmiami.difference) * 550;
-        transform(rotMul);
-      }
+      // if(rot >= rotation.nftmiami.start && rot < rotation.nftmiami.end) {
+      //   rotMul = ((rot-rotation.nftmiami.start)-rotation.nftmiami.difference) * 550;
+      //   transform(rotMul);
+      // }
 
       controls.update();
       renderer.render(scene, camera);
@@ -145,6 +145,7 @@ function Carousel() {
     <div>
       <div
         ref={carousel}
+        className="carousel"
         style={{ width: "90%", height: "600px", margin: "40px" }}
       ></div>
       <div
