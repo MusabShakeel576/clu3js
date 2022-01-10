@@ -3851,6 +3851,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^12.0.0
     "@testing-library/user-event": ^13.2.1
+    gsap: ^3.9.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-router-dom: ^6.2.1
@@ -6015,6 +6016,13 @@ __metadata:
   version: 4.2.9
   resolution: "graceful-fs@npm:4.2.9"
   checksum: 68ea4e07ff2c041ada184f9278b830375f8e0b75154e3f080af6b70f66172fabb4108d19b3863a96b53fc068a310b9b6493d86d1291acc5f3861eb4b79d26ad6
+  languageName: node
+  linkType: hard
+
+"gsap@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "gsap@npm:3.9.1"
+  checksum: 4ea20b134bb00419286842f6e57ea7cb132b5b738d2aca2eecd6f423804ca3a4ac531c76aee63aad9d8b40a0f16e6a50b78bc201fd53f5fa3ca18be51b89f6bb
   languageName: node
   linkType: hard
 

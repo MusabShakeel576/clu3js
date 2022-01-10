@@ -7,18 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .carousel-description {
   color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 0 40px;
-  width: 300px;
   margin: auto;
+  min-width: 450px;
+  max-width: 550px;
   text-align: center;
-  overflow: hidden;
-}
-
-.carousel-description > div {
-  transform: translateX(-100px);
 }
