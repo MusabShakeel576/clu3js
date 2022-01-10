@@ -15,11 +15,11 @@ function GoobersGLTF(scene) {
     for (let i = 0; i < count; i++) {
       loader.load(
         // resource URL
-        '/assets/cat/scene.gltf',
+        '/assets/goobers/goobers2.gltf',
         // called when the resource is loaded
         function (gltf) {
-          // const mesh = gltf.scene;
-          const mesh = new THREE.Mesh(geometry, material);
+          const mesh = gltf.scene;
+          // const mesh = new THREE.Mesh(geometry, material);
           const t = i / count * 2 * Math.PI;
           mesh.position.x = Math.cos(t) * 4;
           mesh.position.y = 0.5;

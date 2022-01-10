@@ -137,9 +137,9 @@ function Carousel() {
     animate();
   }, [goobersGLTF, rotation])
 
-  useEffect(() => {
-    console.log(rotate);
-  }, [rotate])
+  // useEffect(() => {
+  //   console.log(rotate);
+  // }, [rotate])
 
   return (
     <div>
