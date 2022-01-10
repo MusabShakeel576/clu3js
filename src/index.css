@@ -15,14 +15,10 @@ body {
   margin: 0 40px;
   width: 300px;
   margin: auto;
+  text-align: center;
   overflow: hidden;
 }
 
 .carousel-description > div {
-  transform: translateX(0);
-}
-
-.carousel-description > div > p {
-  position: relative;
-  width: 400px;
+  transform: translateX(-100px);
 }
